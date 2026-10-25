@@ -1,0 +1,163 @@
+<!DCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wedding Invitation | Abu-Bakr & Malaika</title>
+
+    <link rel="stylesheet" href="css/invitation.css">
+</head>
+
+<body>
+
+    <main class="invitation-page">
+
+        <!-- Wedding Invitation Header -->
+        <header class="invitation-header">
+            <p class="invitation-eyebrow">TOGETHER WITH THEIR FAMILIES</p>
+
+            <h1 class="invitation-title">
+                Abu-Bakr
+                <span>&amp;</span>
+                Malaika
+            </h1>
+
+            <p class="invitation-subtitle">
+                We joyfully invite you to celebrate our wedding
+            </p>
+        </header>
+
+        
+        <!-- Main Wedding Invitation Image -->
+        <section class="invitation-hero">
+            <img
+                src="assets/images/wedding-main.png"
+                alt="Abu-Bakr and Malaika's wedding invitation"
+                class="invitation-main-image"
+            >
+        </section>
+
+       
+        <!-- Wedding Event Cards -->
+        <section class="invitation-cards" aria-label="Wedding events">
+
+            <!-- MEHNDI CARD -->
+            <a
+                href="mehndi.html"
+                class="invitation-card details-card event-card"
+                aria-label="Open Mehndi event information"
+            >
+                <img
+                   class="event-card__image"
+                   src="assets/images/mehndi-card.png"
+                   alt="Mehndi invitation card"
+                   loading="lazy"
+                >
+
+               <span class="card-label">MEHNDI</span>
+            </a>
+
+
+            <!-- BARAAT CARD -->
+            <a
+                href="baraat.html"
+                class="invitation-card rsvp-card event-card"
+                aria-label="Open Baraat event information"
+            >
+                <img
+                   class="event-card__image"
+                   src="assets/images/baraat-card.png"
+                   alt="Baraat invitation card"
+                   loading="lazy"
+                >
+
+               <span class="card-label">BARAAT</span>
+            </a>
+
+
+            <!-- WALIMA CARD -->
+            <a
+                href="walima.html"
+                class="invitation-card memories-card event-card"
+                aria-label="Open Walima event information"
+            >
+                <img
+                    class="event-card__image"
+                    src="assets/images/walima-card.png"
+                    alt="Walima invitation card"
+                    loading="lazy"
+                >
+
+                <span class="card-label">WALIMA</span>
+            </a>
+
+        </section>
+
+
+        <!-- Wedding Countdown -->
+        <section
+            class="countdown-section"
+            aria-labelledby="countdown-title"
+        >
+            <p class="countdown-eyebrow">
+                THE COUNTDOWN BEGINS
+            </p>
+
+            <h2 class="countdown-title" id="countdown-title">
+                Counting Down to Forever
+            </h2>
+
+            <p class="countdown-description">
+                Until Abu-Bakr &amp; Malaika's special day
+            </p>
+
+            <div class="countdown-grid" id="wedding-countdown">
+
+                <div class="countdown-unit">
+                    <span class="countdown-number" data-unit="days">
+                        --
+                    </span>
+                    <span class="countdown-label">Days</span>
+                </div>
+
+                <span class="countdown-separator" aria-hidden="true">:</span>
+
+                <div class="countdown-unit">
+                    <span class="countdown-number" data-unit="hours">
+                        --
+                    </span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+
+                <span class="countdown-separator" aria-hidden="true">:</span>
+
+                <div class="countdown-unit">
+                    <span class="countdown-number" data-unit="minutes">
+                        --
+                    </span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+
+                <span class="countdown-separator" aria-hidden="true">:</span>
+
+                <div class="countdown-unit">
+                    <span class="countdown-number" data-unit="seconds">
+                        --
+                    </span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+
+            </div>
+
+            <p class="countdown-message" id="countdown-message">
+                A beautiful beginning awaits
+            </p>
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

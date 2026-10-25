@@ -1,0 +1,771 @@
+/* ========================================
+   WEDDING INVITATION — PAGE 2
+   Abu-Bakr & Malaika
+======================================== */
+
+:root {
+    --ivory: #f8f0e3;
+    --burgundy: #65152a;
+    --deep-burgundy: #400b19;
+    --gold: #bd9149;
+    --text: #6c2834;
+}
+
+/* Basic Reset */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--ivory);
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Main Page */
+.invitation-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 65px 24px 100px;
+    overflow: hidden;
+    position: relative;
+    background:
+        radial-gradient(
+            ellipse at top,
+            #fffaf1 0%,
+            var(--ivory) 70%
+        );
+}
+
+/* Header */
+.invitation-header {
+    max-width: 900px;
+    margin: 0 auto 65px;
+    text-align: center;
+    animation: headerReveal 1.2s ease both;
+}
+
+.invitation-eyebrow {
+    margin: 0 0 18px;
+    color: #8d735f;
+    font-size: 12px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.invitation-title {
+    margin: 0;
+    color: var(--burgundy);
+    font-size: clamp(44px, 7vw, 88px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.invitation-title span {
+    display: block;
+    margin: 12px 0;
+    color: var(--gold);
+    font-size: 0.48em;
+    font-style: italic;
+}
+
+.invitation-subtitle {
+    margin: 28px 0 0;
+    color: #947c6d;
+    font-size: 16px;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* Card Arrangement */
+.invitation-cards {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 10px;
+}
+
+/* Individual Cards */
+.invitation-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min(31%, 320px);
+    min-height: 380px;
+    padding: 30px 22px;
+    border: 1px solid var(--gold);
+    outline: 1px solid rgba(189, 145, 73, 0.35);
+    outline-offset: -9px;
+    border-radius: 3px;
+    color: #f8e5b8;
+    text-align: center;
+    text-decoration: none;
+    background:
+        linear-gradient(
+            145deg,
+            #791c32,
+            var(--burgundy) 55%,
+            var(--deep-burgundy)
+        );
+    box-shadow:
+        0 16px 35px rgba(65, 14, 27, 0.18),
+        inset 0 0 25px rgba(0, 0, 0, 0.12);
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+    animation: cardReveal 1s ease both;
+}
+
+.details-card {
+    transform: rotate(-3deg);
+    animation-delay: 0.2s;
+}
+
+.rsvp-card {
+    z-index: 2;
+    min-height: 420px;
+    background:
+        linear-gradient(
+            145deg,
+            #fff6e3,
+            #ead5ad
+        );
+    color: var(--burgundy);
+    animation-delay: 0.4s;
+}
+
+.memories-card {
+    transform: rotate(3deg);
+    animation-delay: 0.6s;
+}
+
+.invitation-card:hover {
+    z-index: 5;
+    transform: translateY(-12px) rotate(0deg) scale(1.035);
+    box-shadow:
+        0 25px 45px rgba(65, 14, 27, 0.25),
+        inset 0 0 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Text */
+.card-label {
+    margin-bottom: 18px;
+    font-size: clamp(17px, 2vw, 24px);
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
+
+.card-description {
+    color: inherit;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.8;
+    opacity: 0.85;
+}
+
+/* Entrance Animations */
+@keyframes headerReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        translate: 0 35px;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+/* Tablet and Mobile */
+@media (max-width: 760px) {
+    .invitation-page {
+        padding: 48px 18px 70px;
+    }
+
+    .invitation-header {
+        margin-bottom: 40px;
+    }
+
+    .invitation-eyebrow {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .invitation-title {
+        letter-spacing: -1px;
+    }
+
+    .invitation-subtitle {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .invitation-cards {
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .invitation-card,
+    .rsvp-card {
+        width: min(100%, 380px);
+        min-height: 280px;
+    }
+
+    .details-card,
+    .memories-card {
+        transform: none;
+    }
+
+    .invitation-card:hover {
+        transform: translateY(-6px);
+    }
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* Main Wedding Invitation Image */
+
+.invitation-hero {
+    width: 100%;
+    max-width: 1500px;
+    margin: 20px auto 70px;
+    padding: 0 24px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.invitation-main-image {
+    display: block;
+    width: 100%;
+    max-width: 1450px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Responsive layout */
+
+@media (max-width: 768px) {
+    .invitation-hero {
+        margin: 10px auto 40px;
+        padding: 0 12px;
+    }
+
+    .invitation-main-image {
+        width: 100%;
+    }
+}
+
+
+/* Main Invitation Image Animation */
+
+.invitation-hero {
+    opacity: 0;
+    transform: translateY(35px) scale(0.98);
+    animation: invitationImageReveal 1.4s ease-out 0.5s forwards;
+    will-change: opacity, transform;
+}
+
+@keyframes invitationImageReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .invitation-hero {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+/* Subtle Floating Animation for Invitation Cards */
+
+.invitation-cards .details-card {
+    animation: floatLeftCard 3.8s ease-in-out infinite;
+}
+
+.invitation-cards .rsvp-card {
+    animation: floatCenterCard 4.2s ease-in-out infinite;
+}
+
+.invitation-cards .memories-card {
+    animation: floatRightCard 4s ease-in-out infinite;
+}
+
+/* Left card: gentle up and down */
+
+@keyframes floatLeftCard {
+    0%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(-3px, -8px, 0);
+    }
+}
+
+/* Center card: slightly different movement */
+
+@keyframes floatCenterCard {
+    0%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(2px, -6px, 0);
+    }
+}
+
+/* Right card: gentle movement in the opposite direction */
+
+@keyframes floatRightCard {
+    0%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(3px, -7px, 0);
+    }
+}
+
+/* Accessibility: respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .invitation-cards .details-card,
+    .invitation-cards .rsvp-card,
+    .invitation-cards .memories-card {
+        animation: none;
+    }
+}
+
+
+/* ========================================
+   WEDDING COUNTDOWN
+======================================== */
+
+.countdown-section {
+    position: relative;
+    width: min(100%, 900px);
+    margin: 75px auto 40px;
+    padding: 48px 24px;
+
+    text-align: center;
+    color: var(--burgundy);
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255, 255, 255, 0.9),
+            transparent 75%
+        );
+    
+    animation: countdownReveal 1s ease-out both;
+}
+
+.countdown-eyebrow {
+    margin: 0 0 12px;
+
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+.countdown-title {
+    margin: 0;
+
+    color: var(--burgundy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(27px, 4vw, 42px);
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.countdown-description {
+    margin: 14px 0 32px;
+
+    color: #947c6d;
+    font-size: 15px;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+.countdown-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: clamp(8px, 2.5vw, 28px);
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-width: clamp(54px, 10vw, 100px);
+    gap: 9px;
+}
+
+.countdown-number {
+    color: var(--burgundy);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(30px, 5.5vw, 54px);
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+}
+
+.countdown-label {
+    color: #947c6d;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.countdown-separator {
+    align-self: flex-start;
+    padding-top: 2px;
+
+    color: var(--gold);
+    font-size: clamp(25px, 4vw, 38px);
+    line-height: 1;
+}
+
+.countdown-message {
+    margin: 30px 0 0;
+
+    color: var(--gold);
+    font-size: 14px;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+@keyframes countdownReveal {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile layout */
+
+@media (max-width: 480px) {
+    .countdown-section {
+        margin-top: 45px;
+        padding: 35px 8px;
+    }
+
+    .countdown-eyebrow {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+    }
+
+    .countdown-description {
+        margin-bottom: 26px;
+        font-size: 13px;
+    }
+
+    .countdown-grid {
+        gap: 7px;
+    }
+
+    .countdown-unit {
+        min-width: 0;
+        flex: 1;
+        gap: 8px;
+    }
+
+    .countdown-number {
+        font-size: clamp(25px, 8vw, 36px);
+    }
+
+    .countdown-label {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .countdown-separator {
+        font-size: 24px;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .countdown-section {
+        animation: none;
+    }
+}
+
+
+/* ========================================
+   MEHNDI, BARAAT & WALIMA EVENT CARDS
+======================================== */
+
+.invitation-cards .event-card {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 14px;
+    padding: 14px 14px 26px;
+
+    min-height: 420px;
+
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+
+    text-align: center;
+    box-shadow:
+        0 16px 35px rgba(65, 14, 27, 0.16),
+        inset 0 0 18px rgba(0, 0, 0, 0.08);
+
+    transition:
+        box-shadow 400ms ease,
+        border-color 400ms ease;
+}
+
+/* Card artwork */
+
+.invitation-cards .event-card__image {
+    display: block;
+
+    width: 100%;
+    height: 225px;
+    flex-shrink: 0;
+
+    object-fit: cover;
+    object-position: center;
+
+    border: 1px solid rgba(189, 145, 73, 0.65);
+    border-radius: 2px;
+
+    background: var(--ivory);
+}
+
+/* Event titles */
+
+.invitation-cards .event-card .card-label {
+    display: block;
+
+    margin: 4px 0 0;
+    padding: 0 4px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(17px, 2vw, 23px);
+    font-weight: 400;
+
+    line-height: 1.4;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* Event descriptions */
+
+.invitation-cards .event-card .card-description {
+    display: block;
+
+    margin: 0;
+    padding: 0 5px;
+
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* Subtle hover highlight */
+
+@media (hover: hover) and (pointer: fine) {
+    .invitation-cards .event-card:hover {
+        border-color: var(--gold-light);
+
+        box-shadow:
+            0 22px 42px rgba(65, 14, 27, 0.22),
+            inset 0 0 20px rgba(0, 0, 0, 0.06);
+    }
+}
+
+/* Responsive image sizing */
+
+@media (max-width: 760px) {
+    .invitation-cards .event-card {
+        width: min(100%, 380px);
+        min-height: 0;
+        padding: 14px 14px 24px;
+        gap: 12px;
+    }
+
+    .invitation-cards .event-card__image {
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
+
+    .invitation-cards .event-card .card-label {
+        font-size: 21px;
+    }
+
+    .invitation-cards .event-card .card-description {
+        font-size: 14px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .invitation-cards .event-card {
+        transition: none;
+    }
+}
+
+
+/* ========================================
+   COMPLETE EVENT IMAGES — NO CROPPING
+======================================== */
+
+.invitation-cards .event-card {
+    height: auto;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 12px;
+    padding: 12px 12px 24px;
+}
+
+/* Show the entire invitation artwork */
+
+.invitation-cards .event-card__image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    max-height: none;
+
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+
+    flex-shrink: 0;
+    border: none;
+    border-radius: 2px;
+}
+
+/* Event name below the complete image */
+
+.invitation-cards .event-card .card-label {
+    display: block;
+
+    width: 100%;
+    margin: 4px 0 0;
+    padding: 0 4px;
+
+    color: #f8e5b8;
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 500;
+    line-height: 1.4;
+
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+/* The centre card uses the ivory palette */
+
+.invitation-cards .rsvp-card .card-label {
+    color: var(--burgundy);
+}
+
+/* Mobile layout */
+
+@media (max-width: 760px) {
+    .invitation-cards .event-card {
+        width: min(100%, 380px);
+        min-height: 0;
+        height: auto;
+
+        padding: 10px 10px 22px;
+        gap: 10px;
+    }
+
+    .invitation-cards .event-card__image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
+    }
+
+    .invitation-cards .event-card .card-label {
+        font-size: 21px;
+        letter-spacing: 2.5px;
+    }
+}
